@@ -9,6 +9,7 @@ const NAV = [
   { href: "#diferencial", label: "Diferencial" },
   { href: "#servicos", label: "Serviços" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contato", label: "Contato" },
 ];
 
