@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+/* =============================================================
+   Tokens — Rosana Leal Rodrigues · Nutrifarma
+   Estratégia de cor: Committed (verde-musgo carrega 40-60% da
+   superfície). Cor de marca: #20513E ≡ oklch(0.36 0.057 158).
+   Todos os neutros têm chroma 0.006-0.018 puxado para o verde —
+   nada de #000 / #fff puros.
+   ============================================================= */
+
+@theme {
+  /* Marca principal — verde-musgo (cor oficial: #20513E) */
+  --color-moss-950: oklch(0.16 0.025 158);
+  --color-moss-900: oklch(0.22 0.038 158);
+  --color-moss-800: oklch(0.29 0.05 158);
+  --color-moss-700: oklch(0.36 0.057 158); /* #20513E — marca */
+  --color-moss-600: oklch(0.44 0.063 159);
+  --color-moss-500: oklch(0.52 0.072 160);
+  --color-moss-400: oklch(0.65 0.07 160);
+  --color-moss-300: oklch(0.77 0.05 158);
+  --color-moss-200: oklch(0.87 0.025 158);
+  --color-moss-100: oklch(0.94 0.012 155);
+  --color-moss-50: oklch(0.97 0.006 150);
+
+  /* Areia / fundo neutro — quente, levemente puxado para o verde */
+  --color-sand-50: oklch(0.97 0.008 85);
+  --color-sand-100: oklch(0.93 0.012 80);
+  --color-sand-200: oklch(0.88 0.018 78);
+  --color-sand-300: oklch(0.82 0.022 80);
+
+  /* Tinta / texto */
+  --color-ink-950: oklch(0.14 0.018 155);
+  --color-ink-900: oklch(0.18 0.015 155);
+  --color-ink-700: oklch(0.32 0.018 155);
+  --color-ink-500: oklch(0.5 0.012 155);
+  --color-ink-300: oklch(0.7 0.008 155);
+
+  /* Acentos raros */
+  --color-leaf: oklch(0.62 0.13 145);
+  --color-gold: oklch(0.78 0.07 82); /* dourado dessaturado para credenciais */
+
+  /* Tipografia */
+  --font-sans: var(--font-be-vietnam), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-tenor), Georgia, serif;
+  --font-script: var(--font-pinyon), "Brush Script MT", cursive;
+
+  /* Easings (curvas exponenciais — sem bounce, sem elástico) */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================================
+   Base
+   ============================================================= */
+
+html {
+  background: var(--color-sand-50);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 0.95rem + 0.32vw, 1.1875rem); /* 17→19px */
+  line-height: 1.62;
+  font-weight: 400;
+  color: var(--color-ink-900);
+  background: var(--color-sand-50);
+}
+
+::selection {
+  background: var(--color-moss-700);
+  color: var(--color-sand-50);
+}
+
+/* Foco visível em interativos — para a11y */
+:focus-visible {
+  outline: 2px solid var(--color-leaf);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Tipografia helpers */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.012em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* =============================================================
+   Hero — animações de entrada
+   ============================================================= */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-clip {
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-reveal-up {
+  animation: reveal-up 900ms var(--ease-out-quint) both;
+}
+
+.animate-reveal-clip {
+  animation: reveal-clip 1100ms var(--ease-out-quint) both;
+}
+
+.animate-draw-line {
+  transform-origin: left;
+  animation: draw-line 1400ms var(--ease-out-expo) both;
+}
+
+.animate-float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+/* Stagger helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* =============================================================
+   Reduced motion — desliga tudo
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Suaviza scroll-to âncoras */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* =============================================================
+   Utilitários customizados
+   ============================================================= */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Hero — máscara para a foto da Rosana se fundir com o moss-900.
+   A foto tem fundo cinza neutro; aplicamos um soft mask radial
+   para suavizar a borda contra o verde escuro. */
+.photo-soft-mask {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.85) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.85) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Placeholder de imagem futura — moldura visível, não card vazio */
+.image-frame {
+  position: relative;
+  background:
+    linear-gradient(135deg, var(--color-moss-100) 0%, var(--color-sand-100) 100%);
+  border: 1px dashed var(--color-moss-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-moss-600);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.image-frame::before,
+.image-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--color-moss-500);
+}
+
+.image-frame::before {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.image-frame::after {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
