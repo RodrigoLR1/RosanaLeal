@@ -123,17 +123,18 @@ export function Hero() {
             </LinkButton>
           </div>
 
-          {/* Linha de credenciais — hairline + texto small uppercase + ramo pequeno */}
+          {/* Linha de credenciais — centralizada no mobile, editorial no desktop */}
           <div
-            className="animate-reveal-up mt-14 md:mt-20 flex items-center gap-4 relative"
+            className="animate-reveal-up mt-14 md:mt-20 flex items-center justify-center md:justify-start gap-4 relative"
             style={{ animationDelay: "800ms" }}
           >
+            {/* Hairline editorial — só aparece no desktop */}
             <span
               aria-hidden
-              className="animate-draw-line h-px bg-[var(--color-moss-700)]/40 w-12 md:w-20"
+              className="hidden md:block animate-draw-line h-px bg-[var(--color-moss-700)]/40 w-20"
             />
             <p className="text-[0.66rem] md:text-[0.7rem] tracking-[0.28em] uppercase text-[var(--color-moss-700)] font-medium whitespace-nowrap">
-              {SITE.credentials.yearsOfPractice}+ anos · {SITE.credentials.crfPB} · {SITE.credentials.crn6}
+              {SITE.credentials.crfPB} · {SITE.credentials.crn6}
             </p>
             {/* Ramo pequeno após a linha de credenciais — assinatura discreta */}
             <Image
