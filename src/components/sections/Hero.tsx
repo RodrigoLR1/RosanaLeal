@@ -139,7 +139,7 @@ export function Hero() {
               width={900}
               height={400}
               priority={false}
-              className="pointer-events-none select-none absolute -top-20 md:-top-28 right-8 md:-right-20 w-[115%] md:w-[125%] h-auto opacity-30 z-0"
+              className="pointer-events-none select-none absolute -top-20 md:-top-28 -right-10 md:-right-20 w-[115%] md:w-[125%] h-auto opacity-30 z-0"
             />
 
             {/* Passe-partout — retângulo sand-100 deslocado atrás da foto */}
@@ -174,7 +174,7 @@ export function Hero() {
                 posicionamento previsível e não escapa do contêiner. */}
             <p
               aria-hidden
-              className="hidden md:block absolute top-10 -right-7 lg:-right-9 text-[0.62rem] tracking-[0.32em] uppercase text-[var(--color-moss-700)]/70 whitespace-nowrap font-medium"
+              className="hidden lg:block absolute top-10 -right-7 lg:-right-9 text-[0.62rem] tracking-[0.32em] uppercase text-[var(--color-moss-700)]/70 whitespace-nowrap font-medium"
               style={{ writingMode: "vertical-rl" }}
             >
               Rosana Leal Rodrigues · Campina Grande-PB
@@ -182,10 +182,10 @@ export function Hero() {
 
           </div>
 
-          {/* Legenda horizontal — versão mobile, centralizada abaixo da foto */}
+          {/* Legenda horizontal — mobile + tablet, centralizada abaixo da foto */}
           <p
             aria-hidden
-            className="md:hidden mt-6 flex items-center justify-center gap-3 text-[0.6rem] tracking-[0.28em] uppercase text-[var(--color-moss-700)]/70 font-medium"
+            className="lg:hidden mt-8 flex items-center justify-center gap-3 text-[0.6rem] tracking-[0.28em] uppercase text-[var(--color-moss-700)]/70 font-medium whitespace-nowrap"
           >
             <span className="h-px w-6 bg-[var(--color-moss-700)]/30" />
             Rosana Leal Rodrigues · Campina Grande-PB
