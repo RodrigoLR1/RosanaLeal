@@ -30,22 +30,22 @@ export function About() {
         revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
-      {/* Ornamento botânico no canto superior direito — eco do logo */}
-      <Image
-        src="/images/branch-small.png"
-        alt=""
-        aria-hidden="true"
-        width={140}
-        height={180}
-        priority={false}
-        className="pointer-events-none select-none absolute top-12 right-6 md:top-20 md:right-14 w-14 md:w-20 h-auto opacity-30"
-      />
-
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-14">
           {/* ============== Foto (5 cols) — placeholder com image-frame ============== */}
           <div className="lg:col-span-5 relative">
             <div className="relative w-full max-w-[440px] mx-auto lg:mx-0">
+              {/* Ramo pequeno — canto inferior esquerdo da foto, sangrando para fora */}
+              <Image
+                src="/images/branch-small.png"
+                alt=""
+                aria-hidden="true"
+                width={140}
+                height={180}
+                priority={false}
+                className="pointer-events-none select-none absolute -bottom-8 -left-10 md:-bottom-12 md:-left-14 w-20 md:w-28 h-auto opacity-35 z-20"
+              />
+
               {/* Passe-partout deslocado atrás */}
               <div
                 aria-hidden
