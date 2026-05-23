@@ -42,18 +42,6 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1320px] grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-12 px-6 md:px-10 lg:px-14 pt-32 md:pt-36 pb-20 lg:pb-28">
         {/* ============== Esquerda: tipografia (7 cols) ============== */}
         <div className="lg:col-span-7 flex flex-col justify-center relative z-10">
-          {/* Folha-solo flutuando à esquerda do sobre-título — pontuação botânica */}
-          <Image
-            src="/images/leaf-solo.png"
-            alt=""
-            aria-hidden="true"
-            width={120}
-            height={240}
-            priority={false}
-            className="pointer-events-none select-none hidden md:block absolute -left-3 -top-8 w-10 lg:w-12 h-auto opacity-35 animate-float-soft"
-            style={{ animationDelay: "1.5s" } as React.CSSProperties}
-          />
-
           {/* Sobre-título com filete */}
           <p
             className="animate-reveal-up flex items-center gap-3 text-[0.7rem] md:text-[0.74rem] tracking-[0.32em] uppercase font-medium text-[var(--color-moss-700)] mb-8"
@@ -136,16 +124,6 @@ export function Hero() {
             <p className="text-[0.66rem] md:text-[0.7rem] tracking-[0.28em] uppercase text-[var(--color-moss-700)] font-medium whitespace-nowrap">
               {SITE.credentials.crfPB} · {SITE.credentials.crn6}
             </p>
-            {/* Ramo pequeno após a linha de credenciais — assinatura discreta */}
-            <Image
-              src="/images/branch-small.png"
-              alt=""
-              aria-hidden="true"
-              width={140}
-              height={180}
-              priority={false}
-              className="pointer-events-none select-none hidden md:block w-10 h-auto opacity-35 ml-2"
-            />
           </div>
         </div>
 
@@ -202,19 +180,6 @@ export function Hero() {
               Rosana Leal Rodrigues · Campina Grande-PB
             </p>
 
-            {/* Tag "Agenda aberta" — discreta, no rodapé da foto */}
-            <div
-              className="absolute bottom-4 left-4 md:bottom-5 md:left-5 flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-[var(--color-sand-50)]/95 backdrop-blur-sm border border-[var(--color-moss-200)] animate-reveal-up shadow-[0_4px_12px_rgba(32,81,62,0.08)]"
-              style={{ animationDelay: "1000ms", animationDuration: "800ms" }}
-            >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-leaf)] opacity-60" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-leaf)]" />
-              </span>
-              <span className="text-[0.65rem] tracking-[0.18em] uppercase text-[var(--color-moss-800)] font-semibold">
-                Agenda aberta
-              </span>
-            </div>
           </div>
         </div>
       </div>
