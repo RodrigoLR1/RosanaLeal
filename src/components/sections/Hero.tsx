@@ -181,6 +181,16 @@ export function Hero() {
             </p>
 
           </div>
+
+          {/* Legenda horizontal — versão mobile, centralizada abaixo da foto */}
+          <p
+            aria-hidden
+            className="md:hidden mt-6 flex items-center justify-center gap-3 text-[0.6rem] tracking-[0.28em] uppercase text-[var(--color-moss-700)]/70 font-medium"
+          >
+            <span className="h-px w-6 bg-[var(--color-moss-700)]/30" />
+            Rosana Leal Rodrigues · Campina Grande-PB
+            <span className="h-px w-6 bg-[var(--color-moss-700)]/30" />
+          </p>
         </div>
       </div>
 
