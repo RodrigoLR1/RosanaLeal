@@ -139,7 +139,7 @@ export function Hero() {
               width={900}
               height={400}
               priority={false}
-              className="pointer-events-none select-none absolute -top-20 md:-top-28 -right-10 md:-right-20 w-[115%] md:w-[125%] h-auto opacity-30 z-0"
+              className="pointer-events-none select-none absolute -top-20 md:-top-28 right-8 md:-right-20 w-[115%] md:w-[125%] h-auto opacity-30 z-0"
             />
 
             {/* Passe-partout — retângulo sand-100 deslocado atrás da foto */}
