@@ -89,7 +89,11 @@ export function About() {
               eyebrow="Sobre"
               title={
                 <>
-                  Sou a <ScriptWord className="text-[var(--color-moss-700)] text-[clamp(2.5rem,5.2vw,3.8rem)] leading-[0.85] pr-1">Rosana</ScriptWord>.
+                  Cuidado clínico,<br className="hidden md:block" /> olhar{" "}
+                  <ScriptWord className="text-[var(--color-moss-700)] text-[clamp(2.8rem,5.8vw,4.2rem)] leading-[0.85] pr-1">
+                    humano
+                  </ScriptWord>
+                  .
                 </>
               }
               className="mb-8"
