@@ -128,7 +128,7 @@ export function Hero() {
         </div>
 
         {/* ============== Direita: foto em contêiner intencional (5 cols) ============== */}
-        <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
+        <div className="lg:col-span-5 relative flex flex-col items-center justify-center lg:justify-end">
           <div className="relative w-full max-w-[480px] aspect-[4/5]">
             {/* Ramo botânico horizontal — sangra acima e à direita da foto,
                 como uma assinatura editorial. Z=0 para ficar atrás do passe-partout. */}
