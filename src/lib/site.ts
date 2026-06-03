@@ -144,8 +144,32 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Atendimento humano, profundo, sem promessa milagrosa. Sai de cada consulta entendendo mais do meu próprio corpo.",
+      "Atendimento humano, profundo, sem promessa milagrosa. Saio de cada consulta entendendo mais do meu próprio corpo.",
     author: "Ana P.",
+    context: "paciente há 1 ano",
+  },
+  {
+    quote:
+      "Tomo medicação pra pressão há 6 anos. Foi a Rosana que me explicou pela primeira vez como aquilo afetava minha disposição — e ajustou minha alimentação em volta disso. Pareceu óbvio depois, mas ninguém tinha feito.",
+    author: "Patrícia L.",
+    context: "paciente há 8 meses",
+  },
+  {
+    quote:
+      "Comecei marcando pra minha mãe, idosa, com 8 medicamentos diários. Em pouco tempo virei paciente também. O olhar da Rosana é diferente — ela vê a pessoa inteira.",
+    author: "Eduardo M.",
+    context: "atendimento domiciliar",
+  },
+  {
+    quote:
+      "Meus exames de ferro nunca voltavam ao normal, mesmo tomando suplemento. Foi a Rosana que descobriu que era o antiácido bloqueando a absorção. Coisas que ninguém me disse em 10 anos.",
+    author: "Beatriz F.",
+    context: "paciente há 6 meses",
+  },
+  {
+    quote:
+      "Acompanhamento sério, sem fórmulas mágicas. Em cada consulta saio sabendo mais sobre o que meu corpo precisa — não menos.",
+    author: "Roberto C.",
     context: "paciente há 1 ano",
   },
 ] as const;
