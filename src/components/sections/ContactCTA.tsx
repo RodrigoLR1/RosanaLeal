@@ -29,15 +29,6 @@ export function ContactCTA() {
     >
       {/* Textura botânica ao fundo */}
       <Image
-        src="/images/branch-vertical.png"
-        alt=""
-        aria-hidden="true"
-        width={400}
-        height={1000}
-        priority={false}
-        className="pointer-events-none select-none absolute -top-10 -right-10 w-72 h-auto opacity-[0.08] invert hidden md:block"
-      />
-      <Image
         src="/images/branch-horizontal.png"
         alt=""
         aria-hidden="true"

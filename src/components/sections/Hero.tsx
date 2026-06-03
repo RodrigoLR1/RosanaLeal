@@ -28,18 +28,7 @@ export function Hero() {
       id="hero"
       className="relative isolate overflow-hidden bg-[var(--color-sand-50)] text-[var(--color-ink-900)]"
     >
-      {/* Ramo vertical — canto inferior esquerdo, ornamentação botânica */}
-      <Image
-        src="/images/branch-vertical.png"
-        alt=""
-        aria-hidden="true"
-        width={300}
-        height={800}
-        priority={false}
-        className="pointer-events-none select-none absolute -left-4 md:-left-6 bottom-0 hidden md:block w-32 lg:w-44 h-auto opacity-30 animate-float-soft z-0"
-      />
-
-      <div className="relative mx-auto max-w-[1320px] grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-12 px-6 md:px-10 lg:px-14 pt-32 md:pt-36 pb-20 lg:pb-28">
+<div className="relative mx-auto max-w-[1320px] grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-12 px-6 md:px-10 lg:px-14 pt-32 md:pt-36 pb-20 lg:pb-28">
         {/* ============== Esquerda: tipografia (7 cols) ============== */}
         <div className="lg:col-span-7 flex flex-col justify-center relative z-10">
           {/* Sobre-título com filete */}
@@ -160,8 +149,8 @@ export function Hero() {
               style={{ animationDelay: "350ms", animationDuration: "1200ms" }}
             >
               <Image
-                src="/images/rosana-hero.png"
-                alt="Rosana Leal Rodrigues, farmacêutica e nutricionista clínica, em retrato profissional"
+                src="/images/rosana-hero-green.jpg"
+                alt="Rosana Leal Rodrigues, farmacêutica e nutricionista clínica, em retrato profissional com blusa verde"
                 fill
                 priority
                 sizes="(max-width: 1024px) 90vw, 480px"

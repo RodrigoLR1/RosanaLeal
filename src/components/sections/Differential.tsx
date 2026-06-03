@@ -51,17 +51,7 @@ export function Differential() {
         priority={false}
         className="pointer-events-none select-none absolute -bottom-16 -left-20 w-[120%] h-auto opacity-[0.08] invert"
       />
-      <Image
-        src="/images/branch-vertical.png"
-        alt=""
-        aria-hidden="true"
-        width={400}
-        height={1000}
-        priority={false}
-        className="pointer-events-none select-none absolute -top-10 -right-12 w-72 h-auto opacity-[0.10] invert hidden lg:block"
-      />
-
-      <div
+<div
         className={`relative mx-auto max-w-[1200px] px-6 md:px-10 lg:px-14 transition-all duration-1000 ease-out ${
           revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
@@ -69,7 +59,7 @@ export function Differential() {
         {/* Eyebrow */}
         <p className="flex items-center gap-3 text-[0.7rem] md:text-[0.74rem] tracking-[0.32em] uppercase font-medium text-[var(--color-moss-200)] mb-7">
           <span className="inline-block w-10 h-px bg-[var(--color-moss-300)]" />
-          O angle único
+          O que poucos veem
         </p>
 
         {/* Headline */}
@@ -108,24 +98,39 @@ export function Differential() {
           ))}
         </ul>
 
-        {/* Card de fechamento — sand-50 flutuante com a frase-âncora */}
-        <div className="relative mt-16 md:mt-24 max-w-[820px]">
+        {/* Card de fechamento — sand-50 flutuante com foto + frase-âncora */}
+        <div className="relative mt-16 md:mt-24 max-w-[980px]">
           <div
             aria-hidden
             className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-full h-full bg-[var(--color-moss-500)]/30 rounded-[3px]"
           />
-          <div className="relative bg-[var(--color-sand-50)] text-[var(--color-ink-900)] rounded-[3px] p-7 md:p-10 lg:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.15)]">
-            <p className="font-display text-[1.15rem] md:text-[1.4rem] lg:text-[1.55rem] leading-[1.4] text-balance">
-              Sou uma das poucas profissionais de Campina Grande com{" "}
-              <span className="text-[var(--color-moss-700)] font-medium">
-                dupla formação
-              </span>{" "}
-              — Farmacêutica (CRF-PB) e Nutricionista Clínica (CRN-6). É essa
-              visão integrada que aplico em cada consulta.
-            </p>
-            <p className="mt-5 text-[0.7rem] md:text-[0.74rem] tracking-[0.28em] uppercase font-medium text-[var(--color-moss-700)]">
-              — Rosana Leal Rodrigues
-            </p>
+          <div className="relative bg-[var(--color-sand-50)] text-[var(--color-ink-900)] rounded-[3px] shadow-[0_8px_30px_rgba(0,0,0,0.15)] overflow-hidden grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr]">
+            {/* Foto da Rosana com livro — prova visual de rigor científico */}
+            <div className="relative aspect-[3/4] md:aspect-auto bg-[var(--color-sand-100)] md:min-h-[420px]">
+              <Image
+                src="/images/rosana-book.jpg"
+                alt="Rosana Leal Rodrigues estudando o livro 'Comer para Vencer Doenças' de Dr. William W. Li"
+                fill
+                sizes="(max-width: 768px) 100vw, 340px"
+                className="object-cover"
+                style={{ objectPosition: "center 40%" }}
+              />
+            </div>
+
+            {/* Texto */}
+            <div className="p-7 md:p-10 lg:p-12 flex flex-col justify-center">
+              <p className="font-display text-[1.15rem] md:text-[1.4rem] lg:text-[1.55rem] leading-[1.4] text-balance">
+                Sou uma das poucas profissionais de Campina Grande com{" "}
+                <span className="text-[var(--color-moss-700)] font-medium">
+                  dupla formação
+                </span>{" "}
+                — Farmacêutica (CRF-PB) e Nutricionista Clínica (CRN-6). É essa
+                visão integrada que aplico em cada consulta.
+              </p>
+              <p className="mt-5 text-[0.7rem] md:text-[0.74rem] tracking-[0.28em] uppercase font-medium text-[var(--color-moss-700)]">
+                — Rosana Leal Rodrigues
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Differential } from "@/components/sections/Differential";
 import { Services } from "@/components/sections/Services";
-import { Journey } from "@/components/sections/Journey";
 import { About } from "@/components/sections/About";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
@@ -18,7 +17,6 @@ export default function Home() {
         <Hero />
         <Differential />
         <Services />
-        <Journey />
         <About />
         <Testimonials />
         <FAQ />

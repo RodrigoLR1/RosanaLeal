@@ -58,16 +58,15 @@ export function About() {
                 className="absolute -left-4 md:-left-6 top-10 bottom-10 w-px bg-[var(--color-moss-700)]/60"
               />
 
-              {/* Image frame placeholder — substituir por <Image /> quando o asset chegar */}
-              <div className="relative image-frame aspect-[3/4] rounded-[2px]">
-                <div className="text-center px-6">
-                  <p className="font-display text-[0.78rem] tracking-[0.28em] text-[var(--color-moss-700)]">
-                    Foto pessoal
-                  </p>
-                  <p className="mt-2 text-[0.66rem] tracking-[0.2em] opacity-70">
-                    a ser fornecida
-                  </p>
-                </div>
+              {/* Foto pessoal — gola alta branca, ensaio Nil Martins (fev/2026) */}
+              <div className="relative aspect-[3/4] rounded-[2px] overflow-hidden bg-[var(--color-sand-100)]">
+                <Image
+                  src="/images/rosana-about.jpg"
+                  alt="Rosana Leal Rodrigues em retrato íntimo, sorriso acolhedor"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 440px"
+                  className="object-cover object-top"
+                />
               </div>
 
               {/* Legenda lateral vertical — usa writing-mode (CSS nativo)

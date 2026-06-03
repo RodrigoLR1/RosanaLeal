@@ -51,9 +51,9 @@ export const SERVICES = [
     title: "Consulta clínica no consultório",
     description:
       "Atendimento presencial individualizado. Anamnese completa com revisão de exames, medicamentos em uso e histórico, plano nutricional personalizado e acompanhamento contínuo.",
-    image: "/images/rosana-original.jpg",
+    image: "/images/rosana-service.jpg",
     imageAlt:
-      "Rosana Leal Rodrigues em jaleco com colarinho verde, sorrindo para a câmera",
+      "Rosana Leal Rodrigues em retrato profissional, postura confiante de braços cruzados",
     whatsappPrompt:
       "Olá Rosana! Tenho interesse em uma consulta no consultório. Como funciona?",
   },

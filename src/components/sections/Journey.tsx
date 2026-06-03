@@ -25,7 +25,6 @@ export function Journey() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-14">
         <SectionHeading
-          eyebrow="Como funciona"
           title="Quatro passos. Sem mistério, sem promessa milagrosa."
           subtitle="Do primeiro contato ao acompanhamento contínuo — tudo em ritmo humano."
           className="max-w-[50ch] mb-16 md:mb-24"
