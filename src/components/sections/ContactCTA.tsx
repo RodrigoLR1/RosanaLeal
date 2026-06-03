@@ -98,7 +98,6 @@ export function ContactCTA() {
           {/* ============== Direita — endereço, horários, Instagram ============== */}
           <div className="flex flex-col gap-8 lg:border-l lg:border-[var(--color-moss-500)]/40 lg:pl-12">
             <InfoBlock label="Consultório">
-              {/* [a confirmar com Rosana] — endereço real */}
               <span className="block">{SITE.address.street}</span>
               <span className="block">
                 {SITE.address.city} · {SITE.address.state}
@@ -106,7 +105,6 @@ export function ContactCTA() {
             </InfoBlock>
 
             <InfoBlock label="Atendimento">
-              {/* [a confirmar com Rosana] — horários reais */}
               <span className="block">{SITE.hours}</span>
               <span className="block opacity-70 text-[0.92rem] mt-1">
                 Atendimento domiciliar mediante agendamento.

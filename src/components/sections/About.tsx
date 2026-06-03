@@ -100,7 +100,6 @@ export function About() {
 
             {/* Bio em 1ª pessoa — parágrafos curtos */}
             <div className="space-y-5 text-[1.02rem] md:text-[1.1rem] leading-[1.7] text-[var(--color-ink-700)] text-pretty max-w-[58ch]">
-              {/* [a confirmar com Rosana] — copy abaixo é placeholder realista */}
               <p>
                 Farmacêutica de formação, percebi cedo que o medicamento sozinho
                 não conta a história inteira. A alimentação faz parte da equação,
@@ -134,7 +133,6 @@ export function About() {
 
             {/* Credenciais — bloco discreto no rodapé */}
             <div className="mt-12 md:mt-16 pt-7 border-t border-[var(--color-moss-200)] flex flex-wrap items-center gap-x-8 gap-y-3">
-              {/* [a confirmar com Rosana] — números reais de CRF e CRN */}
               <CredItem label="Farmacêutica" value={SITE.credentials.crfPB} />
               <CredItem label="Nutricionista Clínica" value={SITE.credentials.crn6} />
               <CredItem

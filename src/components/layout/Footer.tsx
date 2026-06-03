@@ -66,7 +66,6 @@ export function Footer() {
             </p>
             <div className="text-[0.92rem] leading-[1.7] text-[var(--color-ink-700)]">
               <p>
-                {/* [a confirmar com Rosana] */}
                 {SITE.credentials.crfPB}
                 <span className="opacity-40 mx-1.5">·</span>
                 {SITE.credentials.crn6}

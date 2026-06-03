@@ -14,8 +14,7 @@ import { trackWhatsAppClick } from "@/lib/track";
  * Track de `faq_open` automático via Accordion.
  *
  * Conteúdo: 6 perguntas em src/lib/site.ts — preço, convênio, idade,
- * domiciliar, exames, prazo do plano. Algumas com placeholder
- * `[a confirmar com Rosana]`.
+ * domiciliar, exames, prazo do plano.
  */
 export function FAQ() {
   const { ref, revealed } = useReveal<HTMLElement>();

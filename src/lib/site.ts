@@ -100,12 +100,12 @@ export const FAQ = [
   {
     question: "Atende convênio?",
     answer:
-      "[a confirmar com Rosana] No momento o atendimento é particular. Forneço recibo para reembolso de planos de saúde quando aplicável.",
+      "No momento o atendimento é particular. Forneço recibo para reembolso de planos de saúde quando aplicável.",
   },
   {
     question: "Quanto custa a consulta?",
     answer:
-      "[a confirmar com Rosana] Os valores variam entre consulta inicial e retornos. Mande mensagem no WhatsApp que te passo os valores atualizados.",
+      "Os valores variam entre consulta inicial e retornos. Mande mensagem no WhatsApp que te passo os valores atualizados.",
   },
   {
     question: "Atende crianças e idosos?",
@@ -115,7 +115,7 @@ export const FAQ = [
   {
     question: "Como funciona o atendimento domiciliar?",
     answer:
-      "[a confirmar com Rosana] Atendo em domicílio dentro de Campina Grande e região metropolitana. Há um valor adicional pelo deslocamento, que depende do bairro. Combine pelo WhatsApp.",
+      "Atendo em domicílio dentro de Campina Grande e região metropolitana. Há um valor adicional pelo deslocamento, que depende do bairro. Combine pelo WhatsApp.",
   },
   {
     question: "Preciso levar exames recentes?",
@@ -132,19 +132,19 @@ export const FAQ = [
 export const TESTIMONIALS = [
   {
     quote:
-      "[a confirmar com Rosana] Cheguei na Rosana cansada e tomando vários remédios. Em três meses, mudei minha relação com a comida e meu corpo respondeu de um jeito que eu não imaginava.",
+      "Cheguei na Rosana cansada e tomando vários remédios. Em três meses, mudei minha relação com a comida e meu corpo respondeu de um jeito que eu não imaginava.",
     author: "Maria S.",
     context: "paciente há 2 anos",
   },
   {
     quote:
-      "[a confirmar com Rosana] A diferença é que ela olha o medicamento e a alimentação juntos. Isso fez total sentido pra mim, que tomo medicação contínua há anos.",
+      "A diferença é que ela olha o medicamento e a alimentação juntos. Isso fez total sentido pra mim, que tomo medicação contínua há anos.",
     author: "Carlos M.",
     context: "atendimento domiciliar",
   },
   {
     quote:
-      "[a confirmar com Rosana] Atendimento humano, profundo, sem promessa milagrosa. Sai de cada consulta entendendo mais do meu próprio corpo.",
+      "Atendimento humano, profundo, sem promessa milagrosa. Sai de cada consulta entendendo mais do meu próprio corpo.",
     author: "Ana P.",
     context: "paciente há 1 ano",
   },

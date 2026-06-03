@@ -3,15 +3,18 @@
 import { useReveal } from "@/hooks/useReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TESTIMONIALS } from "@/lib/site";
+import { TestimonialDeck } from "./TestimonialDeck";
 
 /**
- * Depoimentos — prova social. 3 cards em grid, sem foto de paciente
- * (privacidade), apenas inicial + sobrenome abreviado.
+ * Depoimentos — prova social.
  *
- * Conteúdo atualmente PLACEHOLDER — [a confirmar com Rosana]. A estrutura
- * está pronta para receber depoimentos reais. Se ela não tiver material
- * por enquanto, basta retirar o <Testimonials /> do page.tsx e a seção
- * some sem deixar buraco.
+ * Mobile: deck de cards com swipe (TestimonialDeck) — 1 card em destaque,
+ * 2 atrás sugerindo profundidade, arrasto pra trocar.
+ * Desktop (md+): grid 3 colunas tradicional, todos visíveis de uma vez.
+ *
+ * Estrutura pronta para receber depoimentos reais. Se não houver material,
+ * basta retirar o <Testimonials /> do page.tsx e a seção some sem deixar
+ * buraco.
  */
 export function Testimonials() {
   const { ref, revealed } = useReveal<HTMLElement>();
@@ -33,7 +36,11 @@ export function Testimonials() {
           className="mx-auto items-center text-center mb-16 md:mb-20 max-w-[44ch]"
         />
 
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        {/* Mobile — deck de cards com swipe */}
+        <TestimonialDeck items={TESTIMONIALS} />
+
+        {/* Desktop — grid 3 colunas */}
+        <ul className="hidden md:grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {TESTIMONIALS.map((t, i) => (
             <li
               key={i}
@@ -65,10 +72,6 @@ export function Testimonials() {
           ))}
         </ul>
 
-        {/* Aviso discreto no rodapé — sumir quando depoimentos forem reais */}
-        <p className="mt-12 text-center text-[0.7rem] tracking-[0.18em] uppercase text-[var(--color-moss-500)]/70">
-          {/* [a confirmar com Rosana] — substituir por depoimentos reais */}
-        </p>
       </div>
     </section>
   );
