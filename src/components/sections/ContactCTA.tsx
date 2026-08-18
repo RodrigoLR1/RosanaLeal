@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useReveal } from "@/hooks/useReveal";
 import { ScriptWord } from "@/components/ui/ScriptWord";
 import { LinkButton } from "@/components/ui/Button";
-import { SITE, whatsappUrl } from "@/lib/site";
+import { SITE, LOCATIONS, whatsappUrl } from "@/lib/site";
 import { trackWhatsAppClick } from "@/lib/track";
 
 /**
@@ -124,8 +125,129 @@ export function ContactCTA() {
             </InfoBlock>
           </div>
         </div>
+
+        {/* ============== Onde estamos — cards de localização com mapa ============== */}
+        <div className="mt-20 md:mt-24">
+          <p className="text-[0.66rem] tracking-[0.32em] uppercase text-[var(--color-moss-200)] mb-6 font-medium">
+            Onde estamos
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {LOCATIONS.map((location) => (
+              <LocationCard key={location.name} location={location} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+/* ============== Card de localização — endereço + telefone + mapa ============== */
+
+function LocationCard({ location }: { location: (typeof LOCATIONS)[number] }) {
+  const [copied, setCopied] = useState(false);
+
+  const fullAddress = `${location.street}, ${location.neighborhood}, ${location.city} - ${location.state}${
+    location.zip ? `, ${location.zip}` : ""
+  }`;
+  const encodedAddress = encodeURIComponent(fullAddress);
+  const mapEmbedSrc = `https://www.google.com/maps?q=${encodedAddress}&output=embed`;
+  const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+  const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(fullAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard indisponível (contexto não seguro, permissão negada) — ignora silenciosamente
+    }
+  }
+
+  return (
+    <div className="relative bg-[var(--color-sand-50)] text-[var(--color-ink-900)] rounded-[3px] p-6 md:p-7 shadow-[0_8px_30px_rgba(0,0,0,0.15)]">
+      {/* Nome do local */}
+      <p className="font-display text-[1.1rem] md:text-[1.2rem] text-[var(--color-moss-800)] mb-5">
+        {location.name}
+      </p>
+
+      {/* Endereço */}
+      <p className="text-[0.62rem] tracking-[0.28em] uppercase text-[var(--color-moss-600)] font-medium mb-2">
+        Endereço
+      </p>
+      <p className="font-display text-[1rem] md:text-[1.05rem] leading-[1.5] text-[var(--color-ink-900)]">
+        {location.street}
+        <br />
+        {location.neighborhood}, {location.city} — {location.state}
+        {location.zip && (
+          <>
+            <br />
+            CEP {location.zip}
+          </>
+        )}
+      </p>
+
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="mt-3 inline-flex items-center gap-1.5 text-[0.85rem] text-[var(--color-moss-700)] hover:text-[var(--color-moss-800)] transition-colors"
+      >
+        <CopyIcon />
+        {copied ? "Copiado!" : "Copiar endereço"}
+      </button>
+
+      {/* Telefone */}
+      <p className="text-[0.62rem] tracking-[0.28em] uppercase text-[var(--color-moss-600)] font-medium mt-6 mb-2">
+        Telefone
+      </p>
+      <p className="font-display text-[1.15rem] md:text-[1.3rem] text-[var(--color-ink-900)]">
+        {location.phone}
+      </p>
+
+      {/* Botões */}
+      <div className="mt-5 flex flex-wrap gap-3">
+        <LinkButton
+          href={whatsappUrl(location.whatsappMessage)}
+          external
+          variant="primary"
+          size="md"
+          icon={<WhatsAppIcon />}
+          onClick={() => trackWhatsAppClick(`location-${location.name}`)}
+        >
+          Falar no WhatsApp
+        </LinkButton>
+        <a
+          href={mapDirectionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 h-12 px-6 text-[0.95rem] font-medium rounded-full border border-[var(--color-ink-300)] text-[var(--color-ink-700)] transition-colors hover:bg-[var(--color-moss-50)] hover:border-[var(--color-moss-400)]"
+        >
+          Como chegar
+        </a>
+      </div>
+
+      {/* Mapa embutido */}
+      <div className="relative mt-6 rounded-[2px] overflow-hidden h-[260px] md:h-[280px] bg-[var(--color-sand-100)]">
+        <a
+          href={mapSearchUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Abrir ${location.name} no Google Maps`}
+          className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-sand-50)]/95 backdrop-blur-sm text-[0.8rem] font-medium text-[var(--color-ink-900)] shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:bg-[var(--color-sand-50)] transition-colors"
+        >
+          Abrir no Maps
+          <ExternalLinkIcon />
+        </a>
+        <iframe
+          src={mapEmbedSrc}
+          title={`Mapa — ${location.name}`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full border-0"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -183,6 +305,43 @@ function InstagramIcon() {
       <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" />
       <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function CopyIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <rect
+        x="5.5"
+        y="5.5"
+        width="8.5"
+        height="8.5"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.3"
+      />
+      <path
+        d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path
+        d="M5.5 3H3.5A1.5 1.5 0 0 0 2 4.5v6A1.5 1.5 0 0 0 3.5 12h6a1.5 1.5 0 0 0 1.5-1.5v-2M8.5 2h3.5v3.5M12 2 6.5 7.5"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

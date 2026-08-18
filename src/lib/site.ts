@@ -41,6 +41,38 @@ export function whatsappUrl(customMessage?: string): string {
   return `https://wa.me/${number}?text=${text}`;
 }
 
+/**
+ * Locais de atendimento — usados nos cards de localização em Contato
+ * (endereço, telefone, mapa embutido, "como chegar").
+ *
+ * Endereços abaixo são placeholder — trocar pelos reais assim que a
+ * Rosana definir os dois locais (consultório, clínica parceira, etc).
+ */
+export const LOCATIONS = [
+  {
+    name: "Consultório",
+    street: "Rua Exemplo, 123",
+    neighborhood: "Centro",
+    city: "Campina Grande",
+    state: "PB",
+    zip: "58400-000",
+    phone: SITE.phoneDisplay,
+    whatsappMessage:
+      "Olá Rosana! Vim pelo site e gostaria de agendar uma consulta no consultório.",
+  },
+  {
+    name: "Unidade 2",
+    street: "Rua Exemplo, 456",
+    neighborhood: "Bairro das Cidades",
+    city: "Campina Grande",
+    state: "PB",
+    zip: "58400-100",
+    phone: SITE.phoneDisplay,
+    whatsappMessage:
+      "Olá Rosana! Gostaria de saber mais sobre o atendimento nesta unidade.",
+  },
+] as const;
+
 /* =============================================================
    Conteúdo — serviços, jornada, FAQ
    ============================================================= */
