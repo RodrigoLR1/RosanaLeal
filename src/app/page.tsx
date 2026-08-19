@@ -7,6 +7,7 @@ import { Services } from "@/components/sections/Services";
 import { About } from "@/components/sections/About";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <About />
         <Testimonials />
         <FAQ />
+        <ContactForm />
         <ContactCTA />
       </main>
       <Footer />
